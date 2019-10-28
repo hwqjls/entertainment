@@ -1,13 +1,17 @@
 <template>
   <div class="container">
-    我是主页
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
+import HomeHeader from 'components/Header/Home';
+
 export default {
   name: 'Index',
-  components: {}
+  components: {
+    HomeHeader
+  }
 }
 </script>
 
