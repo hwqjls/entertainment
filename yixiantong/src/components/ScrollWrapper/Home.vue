@@ -4,6 +4,7 @@
       <category-icons></category-icons> 
       <div v-if="!errorShow">
         <home-title :title="homeTitle.viewTitle"></home-title>
+        <view-list :viewDatas="homeDatas.viewDatas"></view-list>
         <home-title :title="homeTitle.foodTitle"></home-title>
         <home-title :title="homeTitle.hotelTitle"></home-title>
         <home-title :title="homeTitle.messageTitle"></home-title>
@@ -17,6 +18,7 @@
   import BetterScroll from 'better-scroll';
   import CategoryIcons from './CategoryIcons';
   import HomeTitle from './Sub/HomeTitle'
+  import ViewList from './ViewList';
 
   import { mapState } from 'vuex';
   import { IndexModel } from 'models/index'
@@ -27,7 +29,8 @@
     name: 'HomeScrollWrapper',
     components: {
       CategoryIcons,
-      HomeTitle
+      HomeTitle,
+      ViewList
     },
     data () {
       return {
@@ -75,6 +78,10 @@
             console.log(data);
             this.errorShow = false;
             this.homeDatas.viewDatas = data.viewDatas;
+            this.homeDatas.foodDatas = tools.formatJSON(data.foodDatas, 'keyword');
+            this.homeDatas.hotelDatas = data.hotelDatas;
+            this.homeDatas.messageDatas = data.massageDatas;
+            this.homeDatas.ktvDatas = data.viewDatas;
           } else {
             this.errorShow = true;
             console.log({
