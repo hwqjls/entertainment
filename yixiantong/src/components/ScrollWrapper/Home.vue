@@ -6,10 +6,15 @@
         <home-title :title="homeTitle.viewTitle"></home-title>
         <view-list :viewDatas="homeDatas.viewDatas"></view-list>
         <home-title :title="homeTitle.foodTitle"></home-title>
+        <food-list :foodDatas="homeDatas.foodDatas"></food-list>
         <home-title :title="homeTitle.hotelTitle"></home-title>
+        <hotel-list :hotelDatas="homeDatas.hotelDatas"></hotel-list>
         <home-title :title="homeTitle.messageTitle"></home-title>
+        <massage-list :massageDatas="homeDatas.massageDatas"></massage-list>
         <home-title :title="homeTitle.ktvTitle"></home-title>
+        <ktv-list :ktvDatas="homeDatas.ktvDatas"></ktv-list>  
       </div>
+      <error :errorShow="errorShow"></error>
     </div>
   </div>
 </template>
@@ -19,6 +24,11 @@
   import CategoryIcons from './CategoryIcons';
   import HomeTitle from './Sub/HomeTitle'
   import ViewList from './ViewList';
+  import FoodList from './FoodList';
+  import HotelList from './HotelList';
+  import MassageList from './MassageList';
+  import KtvList from './KtvList';
+  import Error from './Sub/Error';
 
   import { mapState } from 'vuex';
   import { IndexModel } from 'models/index'
@@ -30,7 +40,12 @@
     components: {
       CategoryIcons,
       HomeTitle,
-      ViewList
+      ViewList,
+      FoodList,
+      HotelList,
+      MassageList,
+      KtvList,
+      Error
     },
     data () {
       return {
@@ -40,14 +55,14 @@
           foodTitle: '推荐美食',
           hotelTitle: '推荐酒店',
           ktvTitle: '推荐KTV',
-          messageTitle: '推荐按摩',
+          massageTitle: '推荐按摩',
           viewTitle: '推荐景点'
         },
         homeDatas: {  //接口数据缓存(缓存池技术)
           foodDatas: [],
           hotelDatas: [],
           ktvDatas: [],
-          messageDatas: [],
+          massageDatas: [],
           viewDatas: []
         }
       }
@@ -80,7 +95,7 @@
             this.homeDatas.viewDatas = data.viewDatas;
             this.homeDatas.foodDatas = tools.formatJSON(data.foodDatas, 'keyword');
             this.homeDatas.hotelDatas = data.hotelDatas;
-            this.homeDatas.messageDatas = data.massageDatas;
+            this.homeDatas.massageDatas = data.massageDatas;
             this.homeDatas.ktvDatas = data.viewDatas;
           } else {
             this.errorShow = true;
