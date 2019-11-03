@@ -1,3 +1,4 @@
+//头部通用组件
 <template>
   <header class="header">
     <back-ward></back-ward>

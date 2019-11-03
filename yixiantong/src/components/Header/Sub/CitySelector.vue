@@ -1,4 +1,4 @@
-// 城市选择
+// 城市选择组件
 <template>
   <div class="city">
     <router-link to="City">

@@ -1,3 +1,4 @@
+//项目工具类
 export default {
   formatJSON (array, key) { //格式化json
     return array.filter((item) => {

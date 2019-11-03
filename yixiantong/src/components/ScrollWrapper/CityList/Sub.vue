@@ -1,4 +1,4 @@
-////城市列表子组件
+//城市列表子组件
 <template>
   <div class="city-item">
     <span class="city" @click="onCityClick(cityInfo)">{{cityInfo.cityName}}</span>

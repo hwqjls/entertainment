@@ -1,3 +1,4 @@
+//后端接口配置
 const BASE_URL = 'http://study.jsplusplus.com/Yixiantong/';
 
 const API = {

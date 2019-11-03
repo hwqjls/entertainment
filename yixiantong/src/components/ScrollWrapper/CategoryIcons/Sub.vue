@@ -1,4 +1,4 @@
-//项目子组件
+//首页导航栏子组件
 <template>
   <div class="icon-item">
     <div class="icon" @click="onRouteTo(field)" :style="{backgroundColor: bgColor}">

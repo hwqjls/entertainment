@@ -1,3 +1,4 @@
+//假输入框组件
 <template>
   <div class="false-input">
     <router-link to="Search">

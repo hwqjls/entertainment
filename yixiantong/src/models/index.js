@@ -1,3 +1,4 @@
+//首页异步数据请求
 import { HTTP } from 'utils/http';
 import config from 'utils/config';
 

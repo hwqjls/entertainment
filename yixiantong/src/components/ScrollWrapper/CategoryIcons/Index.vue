@@ -1,3 +1,4 @@
+//首页导航栏组件
 <template>
   <div class="icons-wrapper">
     <category-icons-sub 

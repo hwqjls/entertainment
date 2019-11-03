@@ -1,3 +1,4 @@
+//详情页美食组件
 <template>
   <div class="detail-wrapper">
     <detail-name

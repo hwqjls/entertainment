@@ -1,3 +1,4 @@
+//项目路由配置
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -5,6 +6,7 @@ import Index from '@/pages/Index';
 import List from '@/pages/List';
 import Detail from '@/pages/Detail';
 import City from '@/pages/City';
+import Search from '@/pages/Search';
 
 Vue.use(Router)
 
@@ -30,6 +32,11 @@ export default new Router({
       name: 'City',
       component: City
     },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
+    }
   ],
   mode: 'history'
 })

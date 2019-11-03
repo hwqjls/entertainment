@@ -1,3 +1,4 @@
+//列表页组件
 <template>
   <div class="container">
     <common-header :title="title"></common-header>

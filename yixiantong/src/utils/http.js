@@ -1,3 +1,4 @@
+//封装异步数据请求类
 import axios from 'axios';
 import qs from 'qs';
 

@@ -1,3 +1,4 @@
+//首页头部组件
 <template>
   <header class="header">
     <city-selector></city-selector>
