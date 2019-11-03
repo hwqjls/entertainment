@@ -3,10 +3,69 @@
   <div class="scroll-wrapper" ref="wrapper">
     <div class="scroll-content">
       <div v-if="!errorShow">
-        <detail-swiper
+        <!-- 轮播图组件 -->
+        <detail-swiper  
           :picDatas="detailData.pics"
         ></detail-swiper>
+        <!-- 美食详情 -->
+        <detail-food
+          v-if="field === 'food'"
+          :name="detailData.name"
+          :starNum="Number(detailData.star)"
+          :score="detailData.score"
+          :address="detailData.address"
+          :price="Number(detailData.default_price)"
+          :openDateTime="detailData.open_datetime"
+          :recom="detailData.recom"
+          :commentKeyword="detailData.comment_keyword"
+        ></detail-food>
+        <!-- 景点详情 -->
+        <detail-view
+          v-if="field === 'view'"
+          :name="detailData.name"
+          :starNum="Number(detailData.star)"
+          :score="detailData.score"
+          :address="detailData.address"
+          :price="Number(detailData.default_price)"
+          :openDateTime="detailData.open_datetime"
+          :tip="detailData.tip"
+          :intro="detailData.intro"
+          :ticketInfo="detailData.ticket_info"
+        ></detail-view>
+        <!-- 酒店详情 -->
+        <detail-hotel
+          v-if="field === 'hotel'"
+          :name="detailData.name"
+          :starNum="Number(detailData.star)"
+          :score="detailData.score"
+          :address="detailData.address"
+          :price="Number(detailData.default_price)"
+          :service="detailData.service"
+        ></detail-hotel>
+        <!-- 按摩详情 -->
+        <detail-massage
+          v-if="field === 'massage'"
+          :name="detailData.name"
+          :starNum="Number(detailData.star)"
+          :score="detailData.score"
+          :address="detailData.address"
+          :price="Number(detailData.default_price)"
+          :openDateTime="detailData.open_datetime"
+          :commentKeyword="detailData.comment_keyword"
+          :service="detailData.service"
+        ></detail-massage>
+        <!-- ktv详情 -->
+        <detail-ktv
+          v-if="field === 'ktv'"
+          :name="detailData.name"
+          :starNum="Number(detailData.star)"
+          :score="detailData.score"
+          :address="detailData.address"
+          :price="Number(detailData.default_price)"
+          :service="detailData.service"
+	      ></detail-ktv>
       </div>
+      
 
       <error
        :errorShow="errorShow"
@@ -18,6 +77,11 @@
 <script>
   import BetterScroll from 'better-scroll';
   import DetailSwiper from './Sub/Swiper';
+  import DetailFood from './Detail/Food';
+  import DetailView from './Detail/View';
+  import DetailHotel from './Detail/Hotel';
+  import DetailMassage from './Detail/Massage';
+	import DetailKtv from './Detail/Ktv';
   import Error from './Sub/Error';
 
   import { DetailModel } from 'models/detail';
@@ -28,6 +92,11 @@
     name: 'DetailScrollWrapper',
     components: {
       DetailSwiper,
+      DetailFood,
+      DetailView,
+      DetailHotel,
+      DetailMassage,
+			DetailKtv,
       Error
     },
     data () {

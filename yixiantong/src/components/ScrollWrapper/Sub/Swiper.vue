@@ -42,6 +42,7 @@
 <style lang="scss" scoped>
   @import '~styles/variables.scss';
 
+  //插件样式穿透
   .swiper-wrap >>> .swiper-pagination-bullet-active {
   	background-color: $defaultGreen;
   }
