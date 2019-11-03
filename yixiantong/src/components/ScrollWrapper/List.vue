@@ -1,3 +1,4 @@
+//列表页组件
 <template>
   <div class="scroll-wrapper" ref="wrapper">
     <div class="scroll-content">

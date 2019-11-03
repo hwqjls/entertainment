@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Index from '@/pages/Index';
 import List from '@/pages/List';
 import Detail from '@/pages/Detail';
+import City from '@/pages/City';
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/city',
+      name: 'City',
+      component: City
     },
   ],
   mode: 'history'

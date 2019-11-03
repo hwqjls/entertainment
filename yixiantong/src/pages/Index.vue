@@ -1,3 +1,4 @@
+//主页组件
 <template>
   <div class="container">
     <home-header></home-header>
